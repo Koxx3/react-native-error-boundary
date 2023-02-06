@@ -3,7 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
 
 import styles from './styles'
 
-export type Props = { error: Error; stackTrace : any, resetError: () => void }
+export type Props = { error: Error; stackTrace : string, resetError: () => void }
 
 const FallbackComponent = (props: Props) => (
   <SafeAreaView style={styles.container}>
