@@ -20,17 +20,13 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   static getDerivedStateFromError (error: Error): State {
-    console.log("getDerivedStateFromError", error)
     return { error, info: "" }
   }
 
   componentDidCatch (error: Error, info: { componentStack: string }) {
-    console.log("componentDidCatch", error, info)
     if (typeof this.props.onError === 'function') {
-      console.log("componentDidCatch function")
       this.props.onError(error, info.componentStack)
     }
-    console.log("componentDidCatch", error, info)
     this.setState({error: error, info : info.componentStack})
   }
 
@@ -45,7 +41,6 @@ class ErrorBoundary extends React.Component<Props, State> {
       ? <FallbackComponent
           error={this.state.error}
           resetError={this.resetError}
-          stackTrace="toto"
         />
       : this.props.children
   }
