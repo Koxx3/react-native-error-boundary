@@ -11,7 +11,7 @@ const FallbackComponent = (props: Props) => (
       <Text style={styles.title}>Oops!</Text>
       <Text style={styles.subtitle}>{"There's an error"}</Text>
       <Text style={styles.error}>{props.error.toString()}</Text>
-      <Text style={styles.error}>{props.stackTrace.toString()}</Text>
+      <Text style={styles.error}>{props.toString()}</Text>
       <TouchableOpacity style={styles.button} onPress={props.resetError}>
         <Text style={styles.buttonText}>Try again</Text>
       </TouchableOpacity>
